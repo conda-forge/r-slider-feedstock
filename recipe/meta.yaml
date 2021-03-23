@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/slider_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/slider/slider_{{ version }}.tar.gz
-  sha256: 9d631e236438a574926ea0de7677d5bb8c2b6debaf54f28ab0ab1b0141591133
+  sha256: 1c2f92a1589d69ccd61694701614db2593e5047d1beb738c72c8323c1c8232ca
 
 build:
   merge_build_host: true  # [win]
