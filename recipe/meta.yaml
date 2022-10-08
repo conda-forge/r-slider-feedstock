@@ -21,8 +21,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -30,16 +30,18 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
+    - r-ellipsis >=0.3.1
     - r-glue
     - r-rlang >=0.4.5
-    - r-vctrs >=0.2.4
+    - r-vctrs >=0.3.6
     - r-warp
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
+    - r-ellipsis >=0.3.1
     - r-glue
     - r-rlang >=0.4.5
-    - r-vctrs >=0.2.4
+    - r-vctrs >=0.3.6
     - r-warp
 
 test:
