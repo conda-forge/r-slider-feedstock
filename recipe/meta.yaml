@@ -40,12 +40,14 @@ requirements:
     - r-cli >=3.4.1
     - r-rlang >=1.0.6
     - r-vctrs >=0.5.0
+    - r-warp
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-cli >=3.4.1
     - r-rlang >=1.0.6
     - r-vctrs >=0.5.0
+    - r-warp
 
 test:
   commands:
