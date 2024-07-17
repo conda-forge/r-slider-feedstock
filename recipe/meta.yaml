@@ -1,6 +1,5 @@
 {% set version = "0.3.1" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-slider
@@ -13,8 +12,7 @@ source:
   sha256: 200a26795fadb2058e3976af7a697dde7f120645279cfe2580b8c0d6c0a429b0
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,7 +25,9 @@ requirements:
     - r-vctrs                      # [build_platform != target_platform]
     - r-warp                       # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
@@ -43,7 +43,6 @@ requirements:
     - r-warp
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-cli >=3.4.1
     - r-rlang >=1.0.6
     - r-vctrs >=0.5.0
