@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/slider_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/slider/slider_{{ version }}.tar.gz
-  sha256: 200a26795fadb2058e3976af7a697dde7f120645279cfe2580b8c0d6c0a429b0
+  sha256: c9304db3f964475053c5795f160c1e278fa572b114f4e7ecf1686a5899dc3619
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
